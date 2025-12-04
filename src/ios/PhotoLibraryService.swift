@@ -489,9 +489,7 @@ final class PhotoLibraryService {
         // Permission was manually denied by user, open settings screen
         let settingsUrl = URL(string: UIApplicationOpenSettingsURLString)
         if let url = settingsUrl {
-            DispatchQueue.main.async {
-                UIApplication.shared.open(url, options: [:], completionHandler: nil)
-            }
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
             // TODO: run callback only when return ?
             // Do not call success, as the app will be restarted when user changes permission
         } else {
